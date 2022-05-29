@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Setter
 @Getter
-@ToString(exclude = "course")
+//@ToString(exclude = "course")
 @Entity
 public class CourseMaterial {
 
@@ -19,7 +19,7 @@ public class CourseMaterial {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long courseMaterialId;
     private String url;
-     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY,optional = false)
+     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER,optional = false)//optional false means we should not allow to create course without course material
      @JoinColumn(name = "course_id",referencedColumnName = "courseId")
     private Course course;
 

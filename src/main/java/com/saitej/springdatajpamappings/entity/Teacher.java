@@ -3,8 +3,10 @@ package com.saitej.springdatajpamappings.entity;
 
 import lombok.*;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Builder
 @NoArgsConstructor
@@ -19,7 +21,7 @@ public class Teacher {
     private long teacherId;
     private String firstName;
     private String secondName;
-    @OneToMany(cascade = CascadeType.ALL)
+ /*   @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "teacher_id",referencedColumnName = "teacherId")
-    private List<Course> courses;
+    private List<Course> courses;*/
 }
